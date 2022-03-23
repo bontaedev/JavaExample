@@ -29,7 +29,7 @@ public class IceCream extends Product {
 		this.setPrice(price);
 		*/
 	}
-	
+
 	/* 메서드의 오버라이딩
 	 * 부모클래스가 가지고 있는 메서드를 재정의하는 작업
 	 * -> 다른 클래스 안에서 이뤄짐
@@ -43,10 +43,9 @@ public class IceCream extends Product {
 	 * -> 리턴타입은 동일하다.
 	 * 
 	 * */
+
 	
-	public double getPromotionPrice() {
+	public double getPromotionPrice() { // 추상클래스를 가져와 부연하였음 (오버라이딩은 아님)
 		return this.getPrice() * 0.01;
 	}
-	
-
 }

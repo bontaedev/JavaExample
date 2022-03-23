@@ -12,6 +12,7 @@ public class Run02 {
 	
 	Bread br = new Bread("002","바게트",5000);
 	Beverage bv = new Beverage("001","생감자",5500);
+	
 	System.out.println(br.getName());
 	System.out.println(bv.getName());
 	

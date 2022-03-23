@@ -3,34 +3,27 @@ package com.exam.day10_oop02.shop01;
 public class Shop { // 아이스크림 가게 재고 관리 프로그램
 	// 가게 name, openTime, closeTime , iceCream
 	
-	private String nameString;
+	private String name;
 	private String openTime;
 	private String closeTime;
-	private IceCream[] iceCream;
-	private Bread[] bread;
 	
-	private int index;
+	private Product[] product;
+
+	private int index = 0;
 	
 	public Shop() {}
-	public Shop(String nameString, String openTime, String closeTime, IceCream[] iceCream) {
-		this.nameString = nameString;
+	public Shop(String name, String openTime, String closeTime, Product[] product) {
+		this.name = name;
 		this.openTime = openTime;
 		this.closeTime = closeTime;
-		this.iceCream = iceCream;
-	}
-	public Shop(String nameString, String openTime, String closeTime, IceCream[] iceCream, Bread[] bread) {
-		this.nameString = nameString;
-		this.openTime = openTime;
-		this.closeTime = closeTime;
-		this.iceCream = iceCream;
-		this.bread = bread;
+		this.product = product;
 	}
 	
-	public String getNameString() {
-		return nameString;
+	public String getName() {
+		return name;
 	}
-	public void setNameString(String nameString) {
-		this.nameString = nameString;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getOpenTime() {
 		return openTime;
@@ -44,55 +37,27 @@ public class Shop { // 아이스크림 가게 재고 관리 프로그램
 	public void setCloseTime(String closeTime) {
 		this.closeTime = closeTime;
 	}
-	public IceCream[] getIceCream() {
-		return iceCream;
+	public Product[] getProduct() {
+		return product;
 	}
-	public void setIceCream(IceCream[] iceCream) {
-		this.iceCream = iceCream;
-	}
-	public Bread[] getBread() {
-		return bread;
-	}
-	public void setBread(Bread[] bread) {
-		this.bread = bread;
+	public void setProduct(Product[] product) {
+		this.product = product;
 	}
 	
-	
-	public void addBread(Bread bread) {
-		this.bread[index++] = bread;
+	public void addProduct(Product product) {
+		this.product[index++] = product;
 	}
 	
-	public String printBread() {
+	public String printProduct() {
 		String rs = "";
-		for (int i = 0; i < this.bread.length; i++) {
-			if (this.bread[i] != null) {
-				rs += this.bread[i].getProduct_no() 
-						+ " : " + this.bread[i].getName() 
-						+ " : " + this.bread[i].getPrice()
+		for (int i = 0; i < this.product.length; i++) {
+			if (this.product[i] != null) {
+				rs += this.product[i].getProduct_no() 
+						+ " : " + this.product[i].getName() 
+						+ " : " + this.product[i].getPrice()
 						+ "\n";
 			}
 		}
 		return rs;
 	}
-	
-	
-	
-	public void addIceCream(IceCream iceCream) {
-		this.iceCream[index++] = iceCream;
-	}
-	
-	public String printIceCream() {
-		String rs = "";
-		for (int i = 0; i < this.iceCream.length; i++) {
-			if (this.iceCream[i] != null) {
-				rs += this.iceCream[i].getProduct_no() 
-						+ " : " + this.iceCream[i].getName() 
-						+ " : " + this.iceCream[i].getPrice()
-						+ "\n";
-			}
-		}
-		return rs;
-	}
-	
-	
 }

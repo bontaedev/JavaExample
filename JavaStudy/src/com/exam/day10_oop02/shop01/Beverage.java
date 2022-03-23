@@ -9,8 +9,11 @@ public class Beverage extends Product {
 	public Beverage(String product_no, String name, int price) {
 		super(product_no, name, price);
 	}
-	
+
+	@Override
 	public double getPromotionPrice() {
-		return this.getPrice() * 0.04;
+		return this.getPrice() * 0.4;
 	}
+	
+
 }
